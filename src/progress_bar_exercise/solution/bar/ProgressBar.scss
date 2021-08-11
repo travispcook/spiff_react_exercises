@@ -1,0 +1,30 @@
+@import "../../../shared_styles/colors.scss";
+
+.bar-container {
+  height: 6px; 
+  display: flex;
+  align-self: center;
+  margin: 15px 30px;
+  
+  .loading-bar {
+    height: inherit;
+    background: rgb(252,175,96);
+    background: linear-gradient(90deg, rgba(252,175,96,1) 0%, rgba(255,153,89,1) 35%, rgba(249,8,71,1) 100%);
+
+    &.loading, &.paused {
+      width: 90%;
+      transition: width 15s linear;
+    }
+
+    &.complete {
+      width: 100%;
+      transition: width 1s linear;
+    }
+
+    &.unloaded {
+      opacity: 0;
+      width: 0;
+      transition: opacity 500ms linear, width 0s ease-out 2s;
+    }
+  }
+}
